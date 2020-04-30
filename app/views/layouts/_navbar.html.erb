@@ -1,0 +1,14 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info justify-content-between">
+    <a class="navbar-brand" href="#">Cinemadly</a>
+    
+    <div class="navbar-nav">
+      <% if user_signed_in? %>
+      <p class="mt-2 mb-0">Welcome <%= current_user.name %>,  </p>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"nav-item nav-link" %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "nav-item nav-link" %>
+      <% end %>
+    </div>
+  </nav>
+</header>

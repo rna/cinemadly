@@ -10,8 +10,7 @@
   </head>
 
   <body>
-  <header>
-  </header>
+  <%= render('layouts/navbar') %>
   <main>
     <% flash.each do |type, msg| %>
       <div class="alert alert-<%= type %>"><%= msg %></div>
