@@ -4,6 +4,10 @@
     <div class="col-3">
       Fixed Left Side Menu
       <%= current_user.name %>
+      <% if current_user.avatar.attached? %>
+        <image src="<%= url_for(current_user.avatar)%>">
+      <% end %>
+
     </div>
     <div class="col-6">
       Movie Section

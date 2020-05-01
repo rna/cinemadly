@@ -8,8 +8,10 @@ class User < ApplicationRecord
   validates :name, presence:true, length: { maximum: 100 }
   validates :username, presence: true, length: {minimum:3, maximum:50}, uniqueness: { case_sensitive: false },
                 format: {with: /^[a-zA-Z0-9_\.]*$/, multiline:true, message:"Only allows letters, numbers, underscore and punctuation"}
-  validates :email, length: {maximum:100}
-  
+  validates :email, length: { maximum:100 }
+  has_one_attached :avatar
+
+
   def login
     @login || self.username || self.email
   end

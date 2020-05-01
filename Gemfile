@@ -11,6 +11,8 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 
+gem 'cloudinary'
+gem 'dotenv-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
