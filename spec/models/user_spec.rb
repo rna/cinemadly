@@ -14,4 +14,11 @@ RSpec.describe User, type: :model do
     it { should validate_length_of(:username).is_at_least(3).is_at_most(50)}
     it { should validate_length_of(:email).is_at_most(100)}
   end
+
+  describe 'associations' do
+    it { should have_many(:movies) }
+    it { should have_many(:ratings).dependent(:destroy) }
+    it { should have_many(:followings) }
+    it { should have_many(:followers) }
+  end
 end

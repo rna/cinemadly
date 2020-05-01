@@ -11,6 +11,11 @@ class User < ApplicationRecord
   validates :email, length: { maximum:100 }
   has_one_attached :avatar
 
+  has_many :movies
+  has_many :ratings, dependent: :destroy
+
+  has_many :followings, foreign_key:'followed_id'
+  has_many :followers, class_name:'Following', foreign_key:'follower_id'
 
   def login
     @login || self.username || self.email
