@@ -11,6 +11,25 @@
     </div>
     <div class="col-6">
       Movie Section
+      
+      <%= form_with(url: search_path, method: :get) do |f|%>
+        <div class='field'>
+          <%= f.text_field :q %>
+          <%= f.submit 'Search' %>
+        </div>
+      <% end %>
+
+      <div>
+      <% unless @results.nil? %>
+        <ul>
+          <% @results.each do |r| %>
+            <li><%= r[0]["Plot"] %></li>
+          <% end %>
+        </ul>
+      <% else %>
+      <% end %>
+      </div>
+    
     </div>
     <div class="col-3">
       Follow Section
