@@ -12,7 +12,7 @@
     <div class="col-6">
       Movie Section
       
-      <%= form_with(url: search_path, method: :get) do |f|%>
+      <%= form_with(url: '/search', method: :get, local: true) do |f|%>
         <div class='field'>
           <%= f.text_field :q %>
           <%= f.submit 'Search' %>
@@ -20,12 +20,9 @@
       <% end %>
 
       <div>
-      <% unless @results.nil? %>
-        <ul>
-          <% @results.each do |r| %>
-            <li><%= r[0]["Plot"] %></li>
-          <% end %>
-        </ul>
+      <% if @title %>
+        <p><%= @title  %></p>
+        <image src="<%= @poster  %>">
       <% else %>
       <% end %>
       </div>
