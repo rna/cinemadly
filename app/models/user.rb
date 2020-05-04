@@ -14,8 +14,8 @@ class User < ApplicationRecord
   has_many :movies
   has_many :ratings, dependent: :destroy
 
-  has_many :followings, foreign_key:'followed_id'
-  has_many :followers, class_name:'Following', foreign_key:'follower_id'
+  has_many :followers, foreign_key:'followed_id',dependent: :destroy
+  has_many :followings, class_name:'Following', foreign_key:'follower_id', dependent: :destroy
 
   def login
     @login || self.username || self.email
@@ -30,4 +30,15 @@ class User < ApplicationRecord
     end
   end
 
+  def self.following(user)
+    following_users = Following.where(follower_id:user.id).collect(&:followed_id).compact
+    User.where(id:following_users)
+  end
+
+  def self.non_following(user)
+    following_users = Following.where(follower_id:user.id).collect(&:followed_id).compact << user.id
+    User.where.not(id:following_users)
+  end
+
+  
 end

@@ -1,15 +1,23 @@
 @import "bootstrap";
 
+/*Left side nav*/
 
-/*Search Movie Card */
-.movie-grid {
-  flex-wrap: wrap;//not working
-  img {
-    width: 35%;
+.left-sidebar {
+  img{
+    width:200px;
     height: auto;
   }
 }
 
+.movie-grid {
+  flex-wrap: wrap;//not working
+  img {
+    width: 45%;
+    height: auto;
+  }
+}
+
+/*Search Movie Card */
 .search-card {
   img {
     width: 35%;

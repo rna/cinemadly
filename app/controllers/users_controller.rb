@@ -7,6 +7,7 @@ class UsersController < ApplicationController
       @poster = params[:poster]
     end
     @movies = current_user.movies.all
+    @non_followings = User.non_following(current_user)
   end
 
   def show

@@ -1,7 +1,7 @@
 <h1>User#index</h1>
 <div class="container">
   <div class="row">
-    <div class="col-3">
+    <div class="left-sidebar col-3">
       Fixed Left Side Menu
       <%= current_user.name %>
       <% if current_user.avatar.attached? %>
@@ -28,6 +28,13 @@
 
     <div class="col-3">
       Follow Section
+      <% @non_followings.each do |u|%>
+        <div>
+          <img src="<%= url_for(u.avatar)%>">
+          <%= u.name %>
+        </div>
+        
+      <% end %>
     </div>
   </div>
 </div>
