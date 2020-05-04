@@ -5,7 +5,7 @@
       Fixed Left Side Menu
       <%= current_user.name %>
       <% if current_user.avatar.attached? %>
-        <image src="<%= url_for(current_user.avatar)%>">
+        <img src="<%= url_for(current_user.avatar)%>">
       <% end %>
 
     </div>
@@ -19,15 +19,13 @@
         </div>
       <% end %>
 
-      <div>
       <% if @title %>
-        <p><%= @title  %></p>
-        <image src="<%= @poster  %>">
-      <% else %>
+        <%= render 'search/search_card' %>
       <% end %>
-      </div>
-    
+
+      <%= render 'movie/movie'%>
     </div>
+
     <div class="col-3">
       Follow Section
     </div>

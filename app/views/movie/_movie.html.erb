@@ -1,0 +1,17 @@
+<div class="d-flex movie-grid">
+  <% @movies.each do |movie| %>
+    <div class="movie">
+      <img src="<%= movie.poster  %>">
+      <h4><%= movie.title  %></h4>
+      <% if movie.ratings.any? %>
+              <p><%= movie.ratings.collect(&:rating)%> </p>
+      <% else %>
+        <%= form_for(Rating.new,url:ratings_path) do |f| %>
+          <%= f.select 'rating', options_for_select(1..10) %><br/>
+          <%= f.hidden_field :movie_id,value:movie.id %>
+          <%= f.submit 'Rate this movie'%>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

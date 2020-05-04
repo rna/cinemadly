@@ -1,6 +1,22 @@
 @import "bootstrap";
 
 
+/*Search Movie Card */
+.movie-grid {
+  flex-wrap: wrap;//not working
+  img {
+    width: 35%;
+    height: auto;
+  }
+}
+
+.search-card {
+  img {
+    width: 35%;
+    height: auto;
+  }
+}
+
 /*flash*/
 
 .alert-error {

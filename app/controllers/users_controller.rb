@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       @title = params[:title]
       @poster = params[:poster]
     end
+    @movies = current_user.movies.all
   end
 
   def show
