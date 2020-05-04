@@ -30,12 +30,12 @@ class User < ApplicationRecord
     end
   end
 
-  def self.following(user)
+  def following(user)
     following_users = Following.where(follower_id:user.id).collect(&:followed_id).compact
     User.where(id:following_users)
   end
 
-  def self.non_following(user)
+  def non_following(user)
     following_users = Following.where(follower_id:user.id).collect(&:followed_id).compact << user.id
     User.where.not(id:following_users)
   end

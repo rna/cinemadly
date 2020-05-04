@@ -32,6 +32,7 @@
         <div>
           <img src="<%= url_for(u.avatar)%>">
           <%= u.name %>
+          <%= button_to 'Follow', followings_path(followed_id:u.id), method:'post' %>
         </div>
         
       <% end %>

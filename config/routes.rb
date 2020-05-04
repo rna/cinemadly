@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :movies, only: [:index, :create]
   resources :ratings, only: [:create]
+  resources :followings, only: [:create, :destroy]
 
   get '/search' => 'search#search_movie'
 
