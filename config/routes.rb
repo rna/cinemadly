@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: 'users#index'
-
   devise_for :users
+  
+  root to: 'users#index'
 
   resources :users, only: [:index, :show]
   resources :movies, only: [:index, :create]
