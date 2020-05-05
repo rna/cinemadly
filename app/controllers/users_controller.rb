@@ -6,11 +6,17 @@ class UsersController < ApplicationController
       @title = params[:title]
       @poster = params[:poster]
     end
-    @movies = current_user.movies.all
+    timeline_movies
     @non_followings = current_user.non_following
   end
 
   def show
+  end
+
+  private
+  def timeline_movies
+    ids = current_user.followings.pluck(:followed_id) <<  current_user.id
+    @timeline_movies ||= Movie.where(user_id:ids).ordered_by_most_recent.uniq(&:title)
   end
 
 end

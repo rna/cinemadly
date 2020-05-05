@@ -1,10 +1,13 @@
-<div class="d-flex movie-grid">
-  <% @movies.each do |movie| %>
+<div class="d-flex justify-content-around movies">
+  <% @timeline_movies.each do |movie| %>
     <div class="movie">
       <img src="<%= movie.poster  %>">
       <h4><%= movie.title  %></h4>
       <% if movie.ratings.any? %>
-              <p><%= movie.ratings.collect(&:rating)%> </p>
+        <div>
+        <p>Your Rating: <%= Rating.find_by(movie_id:movie.id).rating %>/10 </p>
+        <p>Avg. Friends Rating: <%= Rating.where(movie_id:Movie.where(title:movie.title)).average(:rating).to_i %>/10 </p>
+        </div>
       <% else %>
         <%= form_for(Rating.new,url:ratings_path) do |f| %>
           <%= f.select 'rating', options_for_select(1..10) %><br/>

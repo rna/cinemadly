@@ -1,18 +1,15 @@
 
 <%= render 'left_sidebar' %>
 
-<div class="container">
+<div class="container main">
   <div class="row">
-    <div class="col-8">
-      Movie Section
-      
-      <%= form_with(url: '/search', method: :get, local: true) do |f|%>
-        <div class='field'>
-          <%= f.text_field :q %>
-          <%= f.submit 'Search' %>
-        </div>
-      <% end %>
-
+    <div class="col-8 movie-grid">
+      <div class='text-center searchbar'>
+        <%= form_with(url: '/search', method: :get, local: true) do |f|%>
+            <%= f.text_field :q %>
+            <%= f.submit 'Search', class:"btn-primary" %>
+        <% end %>
+      </div>
       <% if @title %>
         <%= render 'search/search_card' %>
       <% end %>
@@ -20,15 +17,7 @@
       <%= render 'movie/movie'%>
     </div>
 
-    <div class="col-4 right-sidebar">
-      Follow Section
-      <% @non_followings.each do |u|%>
-        <div>
-          <img src="<%= url_for(u.avatar)%>">
-          <%= u.name %>
-          <%= button_to 'Follow', followings_path(followed_id:u.id), method:'post' %>
-        </div>        
-      <% end %>
-    </div>
+    <%= render 'who_to_follow' %>
+
   </div>
 </div>

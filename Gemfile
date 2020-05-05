@@ -10,6 +10,7 @@ gem 'sass-rails', '>= 6'
 gem 'bootstrap', '~> 4.4.1'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
+gem 'hirb'
 
 gem 'cloudinary'
 gem 'dotenv-rails'

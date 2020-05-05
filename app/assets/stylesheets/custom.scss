@@ -4,10 +4,18 @@
 $BORDER_COLOR: #021125;
 $SIDEBAR_BG_COLOR:#1b2a3d;
 $FONT_COLOR:#516377;
-$HIGHLIGHT_TEXT_COLOR: whitesmoke;
+$HIGHLIGHT_TEXT_COLOR: #f5f6f8;
 $THEME_COLOR:#50a4e2;
+$PAGE_BG_COLOR:#f5f6f8;
+
+html,body {
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: $PAGE_BG_COLOR;
+}
 /*Left side nav*/
-body {
+.main {
   margin-left: 250px;
 }
 
@@ -71,10 +79,18 @@ body {
 }
 
 .movie-grid {
-  flex-wrap: wrap;//not working
+  // flex-wrap: wrap;
+  background-color: white;
   img {
-    width: 45%;
+    width: 150px;
     height: auto;
+  }
+  p {
+    font-size: 12px;
+  }
+
+  .movies {
+    flex-wrap: wrap;
   }
 }
 
@@ -88,9 +104,12 @@ body {
 /*Search Movie Card */
 .search-card {
   img {
-    width: 35%;
+    width: 100px;
     height: auto;
   }
+}
+.searchbar {
+  padding: 20px 0;
 }
 
 /*flash*/
