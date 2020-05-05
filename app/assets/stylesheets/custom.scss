@@ -1,11 +1,22 @@
 @import "bootstrap";
 
+$BORDER_COLOR: #021125;
+
 /*Left side nav*/
 
 .left-sidebar {
+  background-color: #1b2a3d;
+  color:#516377;
   img{
-    width:200px;
-    height: auto;
+    width:70px;
+    height:70px;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .profile-pic, .follow-meter {
+    border-bottom: 0.5px solid $BORDER_COLOR;
+    padding: 20px 0;
   }
 }
 
@@ -13,6 +24,13 @@
   flex-wrap: wrap;//not working
   img {
     width: 45%;
+    height: auto;
+  }
+}
+
+.right-sidebar {
+  img{
+    width:100px;
     height: auto;
   }
 }

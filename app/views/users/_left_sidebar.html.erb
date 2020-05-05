@@ -1,0 +1,21 @@
+<div class="left-sidebar col-2">
+  <div class="profile-pic d-flex justify-content-center align-items-center row">
+    <div class="col-5">
+      <% if current_user.avatar.attached? %>
+        <img src="<%= url_for(current_user.avatar)%>">
+      <% end %>
+    </div>
+    <div class="col-7">
+      <p class="text-uppercase font-weight-bold"><%= current_user.name %></p>
+    </div>
+  </div>
+
+  <div class="follow-meter row">
+    <div class="col-6">
+    </div>
+    <div class="col-6">
+
+    </div>
+  </div>
+
+</div>

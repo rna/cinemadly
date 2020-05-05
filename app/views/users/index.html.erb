@@ -1,15 +1,8 @@
-<h1>User#index</h1>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="left-sidebar col-3">
-      Fixed Left Side Menu
-      <%= current_user.name %>
-      <% if current_user.avatar.attached? %>
-        <img src="<%= url_for(current_user.avatar)%>">
-      <% end %>
-
-    </div>
-    <div class="col-6">
+    <%= render 'left_sidebar' %>
+    
+    <div class="col-7">
       Movie Section
       
       <%= form_with(url: '/search', method: :get, local: true) do |f|%>
@@ -26,7 +19,7 @@
       <%= render 'movie/movie'%>
     </div>
 
-    <div class="col-3">
+    <div class="col-3 right-sidebar">
       Follow Section
       <% @non_followings.each do |u|%>
         <div>
