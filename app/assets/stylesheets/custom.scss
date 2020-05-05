@@ -1,12 +1,24 @@
 @import "bootstrap";
 
-$BORDER_COLOR: #021125;
 
+$BORDER_COLOR: #021125;
+$SIDEBAR_BG_COLOR:#1b2a3d;
+$FONT_COLOR:#516377;
+$HIGHLIGHT_TEXT_COLOR: whitesmoke;
+$THEME_COLOR:#50a4e2;
 /*Left side nav*/
+body {
+  margin-left: 250px;
+}
 
 .left-sidebar {
-  background-color: #1b2a3d;
-  color:#516377;
+  background-color: $SIDEBAR_BG_COLOR;
+  color:$FONT_COLOR;
+  height: 100%;
+  width: 250px;
+  position:fixed;
+  top: 0;
+  left: 0;
   img{
     width:70px;
     height:70px;
@@ -14,9 +26,47 @@ $BORDER_COLOR: #021125;
     border-radius: 5px;
   }
 
-  .profile-pic, .follow-meter {
+  .profile-pic {
     border-bottom: 0.5px solid $BORDER_COLOR;
     padding: 20px 0;
+  }
+
+  .follow-meter {
+    border-bottom: 0.5px solid $BORDER_COLOR;
+    h4 {
+      padding-top:5px;
+      color: $HIGHLIGHT_TEXT_COLOR;
+      margin: 0;
+    }
+    .follow-count {
+      border-right: 0.1px solid $BORDER_COLOR;
+    }
+  }
+
+  .sidenav {
+    .navitem {
+      padding: 15px 0;
+      border-bottom: 0.5px solid $BORDER_COLOR;
+      margin:0;
+      a {
+        color: $FONT_COLOR;
+        font-size: 16px;
+      }
+      &:hover {
+        background-color: $THEME_COLOR;
+        a{
+          color:$HIGHLIGHT_TEXT_COLOR;
+          text-decoration: none;
+        }
+      }
+    }
+    .active{
+      background-color: $THEME_COLOR;
+      a{
+        color:$HIGHLIGHT_TEXT_COLOR;
+        text-decoration: none;
+      }
+    }
   }
 }
 

@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
     else
       flash[:error] = "Movie already available in Library"
     end
-    redirect_to users_path
+    redirect_to home_path
   end
 
 

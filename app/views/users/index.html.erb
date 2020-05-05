@@ -1,8 +1,9 @@
-<div class="container-fluid">
+
+<%= render 'left_sidebar' %>
+
+<div class="container">
   <div class="row">
-    <%= render 'left_sidebar' %>
-    
-    <div class="col-7">
+    <div class="col-8">
       Movie Section
       
       <%= form_with(url: '/search', method: :get, local: true) do |f|%>
@@ -19,15 +20,14 @@
       <%= render 'movie/movie'%>
     </div>
 
-    <div class="col-3 right-sidebar">
+    <div class="col-4 right-sidebar">
       Follow Section
       <% @non_followings.each do |u|%>
         <div>
           <img src="<%= url_for(u.avatar)%>">
           <%= u.name %>
           <%= button_to 'Follow', followings_path(followed_id:u.id), method:'post' %>
-        </div>
-        
+        </div>        
       <% end %>
     </div>
   </div>

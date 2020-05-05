@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
     else
       flash[:error] = "You already rated this movie"
     end
-    redirect_to users_path
+    redirect_to home_path
   end
 
   private

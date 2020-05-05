@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   
   root to: 'users#index'
 
-  resources :users, only: [:index, :show]
+  # resources :users, only: [:index, :show]
   resources :movies, only: [:index, :create]
   resources :ratings, only: [:create]
   resources :followings, only: [:create, :destroy]
 
   get '/search' => 'search#search_movie'
+  get '/home' => 'users#index', as: :home
+  get '/profile' => 'users#show', as: :profile
 
 end

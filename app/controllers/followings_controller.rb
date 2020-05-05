@@ -8,7 +8,7 @@ class FollowingsController < ApplicationController
     else
       flash[:error] = "Error in following"
     end
-    redirect_to users_path
+    redirect_to home_path
   end
 
   def destroy
@@ -19,7 +19,7 @@ class FollowingsController < ApplicationController
     else
       flash[:error] = "Error in unfollowing"
     end
-    redirect_to users_path
+    redirect_to home_path
   end
 
 end
