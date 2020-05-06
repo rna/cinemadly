@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   get '/search' => 'search#search_movie'
   get '/home' => 'users#index', as: :home
-  get '/profile' => 'users#show', as: :profile
+  get 'profile/:id' => 'users#show', as: :profile
 
 end

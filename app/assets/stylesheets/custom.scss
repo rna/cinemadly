@@ -1,7 +1,9 @@
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 
-$BORDER_COLOR: #021125;
+$BORDER: 0.5px solid #021125;
 $SIDEBAR_BG_COLOR:#1b2a3d;
 $FONT_COLOR:#516377;
 $HIGHLIGHT_TEXT_COLOR: #f5f6f8;
@@ -35,26 +37,26 @@ html,body {
   }
 
   .profile-pic {
-    border-bottom: 0.5px solid $BORDER_COLOR;
+    border-bottom: $BORDER;
     padding: 20px 0;
   }
 
   .follow-meter {
-    border-bottom: 0.5px solid $BORDER_COLOR;
+    border-bottom: $BORDER;
     h4 {
       padding-top:5px;
       color: $HIGHLIGHT_TEXT_COLOR;
       margin: 0;
     }
     .follow-count {
-      border-right: 0.1px solid $BORDER_COLOR;
+      border-right: $BORDER;
     }
   }
 
   .sidenav {
     .navitem {
       padding: 15px 0;
-      border-bottom: 0.5px solid $BORDER_COLOR;
+      border-bottom: $BORDER;
       margin:0;
       a {
         color: $FONT_COLOR;
@@ -82,7 +84,7 @@ html,body {
   // flex-wrap: wrap;
   background-color: white;
   img {
-    width: 150px;
+    width: 200px;
     height: auto;
   }
   p {
@@ -96,9 +98,24 @@ html,body {
 
 .right-sidebar {
   img{
-    width:100px;
-    height: auto;
+    width: 50px;
+    height: 50px;
   }
+
+  .whoto-title {
+    padding: 20px 0 0 0;
+    border-bottom: $BORDER;
+    p{
+      color:$FONT_COLOR;
+      font-weight: 700;
+    }
+  }
+
+  .whofollow-card {
+    padding: 20px 0;
+
+  }
+
 }
 
 /*Search Movie Card */

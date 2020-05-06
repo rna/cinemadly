@@ -11,6 +11,7 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 gem 'hirb'
+gem 'font-awesome-sass', '~> 5.12.0'
 
 gem 'cloudinary'
 gem 'dotenv-rails'
