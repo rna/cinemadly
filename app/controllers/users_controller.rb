@@ -17,9 +17,9 @@ class UsersController < ApplicationController
   end
 
   private
-  def timeline_movies
-    ids = current_user.followings.pluck(:followed_id) <<  current_user.id
-    @timeline_movies ||= Movie.where(user_id:ids).ordered_by_most_recent.uniq(&:title)
-  end
 
+  def timeline_movies
+    ids = current_user.followings.pluck(:followed_id) << current_user.id
+    @timeline_movies ||= Movie.where(user_id: ids).ordered_by_most_recent.uniq(&:title)
+  end
 end
