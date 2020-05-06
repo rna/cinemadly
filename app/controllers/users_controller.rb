@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       @poster = params[:poster]
     end
     timeline_movies
-    @non_followings = current_user.non_following
+    @non_followings = current_user.non_following.ordered_by_most_recent
   end
 
   def show

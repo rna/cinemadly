@@ -11,6 +11,8 @@ class User < ApplicationRecord
   validates :email, length: { maximum:100 }
   has_one_attached :avatar
 
+  scope :ordered_by_most_recent, -> {order(created_at: :desc)}
+
   has_many :movies
   has_many :ratings, dependent: :destroy
 
