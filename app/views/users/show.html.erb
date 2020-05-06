@@ -1,16 +1,49 @@
 <%= render 'left_sidebar' %>
-
 <div class="container main">
   <div class="row">
-    <div class="col-3">
-      Fixed Left Side Menu
-      <%= current_user.name %>
+    <div class="col-8 movie-grid pt-3">
+      <%= render 'movie/movie_card' %>
     </div>
-    <div class="col-6">
-      Movie Section
-    </div>
-    <div class="col-3">
-      User Profile Follow Section
+    <div class="col-4 right-sidebar">
+      <div class="user-card">
+        <div class="user-info pb-3 text-center d-flex align-items-center justify-content-between">
+          <%= link_to '<i class="fa fa-inverse fa-plus-circle"></i>'.html_safe, followings_path(followed_id:@user.id), method:'post' %>
+          <img src="<%= url_for(@user.avatar)%>" class="rounded-circle">
+          <%= link_to '<i class="fa fa-compass"></i>'.html_safe, followings_path(followed_id:@user.id), method:'post' %>
+        </div>
+        <div class="text-center">
+          <h5><%= @user.name.upcase %></h5>
+          <p>@<%= @user.username %></p>
+        </div>
+      </div>
+      <div class="user-stat row text-center pl-0 ml-0">
+        <div class="col-4">
+          <h4 class="mb-0"><%= @user.movies.count %></h4>
+          <p>Movies</p>
+        </div>
+        <div class="col-3">
+          <h4 class="mb-0"><%= @user.followings.count %></h4>
+          <p>Following</p>
+        </div>
+        <div class="col-4">
+          <h4 class="mb-0"><%= @user.followers.count %></h4>
+          <p>Followers</p>
+        </div>
+      </div>
+
+      <h4 class="follow-title">FOLLOWED BY</h4>
+      <% @followings.each do |u|%>
+        <div class="whofollow-card d-flex align-items-center">
+          <img src="<%= url_for(u.avatar)%>" class="mr-3 rounded-circle">
+          <div>
+          <div class="d-flex username-card">
+            <p class="pr-2"><%= link_to u.name, profile_path(u) %> </p>
+            <%= link_to '<i class="fa fa-plus-circle"></i>'.html_safe, followings_path(followed_id:u.id), method:'post' %>
+          </div>
+          <p class="username">@<%= u.username %></p>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

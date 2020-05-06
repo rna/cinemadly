@@ -37,6 +37,11 @@ class User < ApplicationRecord
     User.where.not(id:following_users)
   end
 
+  def following_users
+    following_users = followers.collect(&:follower_id)
+    User.where(id:following_users)
+  end
+
   def is_following?(user)
     followings.include?(user)
   end

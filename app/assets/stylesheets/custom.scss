@@ -3,7 +3,7 @@
 @import "font-awesome";
 
 
-$BORDER: 0.5px solid #021125;
+$BORDER: 0.5px solid #516377;
 $SIDEBAR_BG_COLOR:#1b2a3d;
 $FONT_COLOR:#516377;
 $HIGHLIGHT_TEXT_COLOR: #f5f6f8;
@@ -97,13 +97,14 @@ html,body {
 }
 
 .right-sidebar {
+  padding: 0;
   img{
     width: 50px;
     height: 50px;
   }
 
   .whoto-title {
-    padding: 20px 0 0 0;
+    padding: 20px 0 0 10px;
     border-bottom: $BORDER;
     p{
       color:$FONT_COLOR;
@@ -112,10 +113,60 @@ html,body {
   }
 
   .whofollow-card {
-    padding: 20px 0;
-
+    padding: 20px 0 0 10px;
+    a {
+      color: black;
+    }
+    
+    i {
+      color:$THEME_COLOR;
+    }
   }
 
+  .user-info {
+    padding:0 80px;
+    img {
+      width: 100px;
+      height: 100px;
+      margin-top:20px;
+    }
+    i {
+      padding-top: 10px;
+      font-size: 30px;
+      color: $FONT_COLOR;
+    }
+  }
+
+  .user-stat {
+    border-top: $BORDER;
+    border-bottom: $BORDER;
+    .col-4,.col-3{
+      padding: 10px 0 0 0;
+      border-right: $BORDER;
+    }
+    h4 {
+      font-weight: 700;
+    }
+  }
+  .user-card p {
+    color: $FONT_COLOR;
+    font-weight: 500;
+  }
+
+}
+
+.follow-title {
+  padding: 20px 10px;
+  border-bottom: $BORDER;
+  color:$FONT_COLOR;
+  font-weight: 400;
+}
+
+.username {
+  color: $FONT_COLOR;
+}
+.username-card {
+  margin-bottom: -20px;
 }
 
 /*Search Movie Card */

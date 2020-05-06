@@ -6,9 +6,12 @@
   <% @non_followings.each do |u|%>
     <div class="whofollow-card d-flex align-items-center">
       <img src="<%= url_for(u.avatar)%>" class="mr-3 rounded-circle">
-      <div class="d-flex">
+      <div>
+      <div class="d-flex  username-card">
         <p class="pr-2"><%= link_to u.name, profile_path(u) %> </p>
         <%= link_to '<i class="fa fa-plus-circle"></i>'.html_safe, followings_path(followed_id:u.id), method:'post' %>
+      </div>
+      <p class="username">@<%= u.username %></p>
       </div>
     </div>        
   <% end %>

@@ -11,6 +11,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @timeline_movies = @user.movies.all
+    @followings = @user.following_users
   end
 
   private
