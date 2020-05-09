@@ -8,7 +8,7 @@
       <div class="user-card">
         <div class="user-info pb-3 text-center d-flex align-items-center justify-content-between">
           <%= link_to '<i class="fa fa-inverse fa-plus-circle"></i>'.html_safe, followings_path(followed_id:@user.id), method:'post' %>
-          <img src="<%= url_for(@user.avatar)%>" class="rounded-circle">
+          <img src="<%= url_for(@user.avatar) if @user.avatar.attached?%>" class="rounded-circle">
           <%= link_to '<i class="fa fa-compass"></i>'.html_safe, followings_path(followed_id:@user.id), method:'post' %>
         </div>
         <div class="text-center">
