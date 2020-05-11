@@ -9,9 +9,8 @@ class Movie < ApplicationRecord
   def movie_rating
     ratings.collect(&:rating)[0]
   end
-  
-  def average_rating(movie)
-    Rating.where(movie_id:Movie.where(title:movie.title)).average(:rating).to_i
-  end
 
+  def average_rating(movie)
+    Rating.where(movie_id: Movie.where(title: movie.title)).average(:rating).to_i
+  end
 end
