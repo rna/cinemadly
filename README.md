@@ -1,9 +1,12 @@
 # Cinemadly - A Social networking app for Cinema lovers
 
-Building Cinemadly, a social networking app where users can follow each other, rate movies, view moviews rated by other following users.
+[![Twitter Follow](https://img.shields.io/twitter/follow/rnadev?label=Follow%20Ramesh%20on%20Twitter&style=social)](https://twitter.com/rnadev)
+
+> Building Cinemadly, a social networking app where users can follow each other, rate movies, view movies rated by other following users.
 
 ## Table of Contents
 
+- [Features](#features)
 - [Built With](#built-with)
 - [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
@@ -14,14 +17,34 @@ Building Cinemadly, a social networking app where users can follow each other, r
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgements)
 
+## Features
+
+- Allows user to register, login and logout.
+
+- User can upload their profile image, which is an optional.
+
+- Users can follow each other.
+
+- User can view the profile of the other user irrespective of their relationship.
+
+- User can add the movie to their library through global movie database search engine.
+
+- User can rate the movie after adding to their library and also they can rate other following users library.
+
+- User can see their rating and average rating of the movie.
+
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v6.0.2.2
+- Rspec
+- OMDB API (Movie Database)
+- Cloudinary (Storage of images)
+- Bootstrap
 
 ## Live Demo
 
-<!-- [Live Demo Link](https://cinemadly.herokuapp.com/) -->
+[Live Demo Link](https://cinemadly.herokuapp.com/)
 
 ## Getting Started
 
