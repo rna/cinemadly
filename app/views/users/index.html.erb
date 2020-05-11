@@ -8,6 +8,7 @@
         <%= form_with(url: '/search', method: :get, local: true) do |f|%>
             <%= f.text_field :q %>
             <%= f.submit 'Search', class:"btn-primary" %>
+            <p><b>NOTE:</b> You can add into your library through this global movie search.</p>
         <% end %>
       </div>
       <% if @title %>

@@ -5,8 +5,8 @@
       <h4><%= movie.title  %></h4>
       <% if movie.ratings.any? %>
         <div>
-        <p>Your Rating: <%= Rating.find_by(movie_id:movie.id).rating %>/10 </p>
-        <p>Avg. Friends Rating: <%= Rating.where(movie_id:Movie.where(title:movie.title)).average(:rating).to_i %>/10 </p>
+        <p>Your Rating: <%= movie.movie_rating %>/10 </p>
+        <p>Avg. Rating: <%= movie.average_rating(movie) %>/10 </p>
         </div>
       <% else %>
         <%= form_for(Rating.new,url:ratings_path) do |f| %>
