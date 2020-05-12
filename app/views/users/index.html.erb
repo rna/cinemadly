@@ -1,0 +1,24 @@
+
+<%= render 'left_sidebar' %>
+
+<div class="container main">
+  <div class="row">
+    <div class="col-8 movie-grid">
+      <div class='text-center searchbar'>
+        <%= form_with(url: '/search', method: :get, local: true) do |f|%>
+            <%= f.text_field :q %>
+            <%= f.submit 'Search', class:"btn-primary" %>
+            <p><b>NOTE:</b> You can add into your library through this global movie search.</p>
+        <% end %>
+      </div>
+      <% if @title %>
+        <%= render 'search/search_card' %>
+      <% end %>
+
+      <%= render 'movie/movie_card'%>
+    </div>
+
+    <%= render 'who_to_follow' %>
+
+  </div>
+</div>

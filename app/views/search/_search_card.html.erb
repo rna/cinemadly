@@ -1,0 +1,5 @@
+<div class="search-card">
+  <img src="<%= @poster  %>">
+  <h4><%= @title  %></h4>
+  <%= button_to 'Add to Library', movies_path, method:'post',params:{movie:{title:@title,poster:@poster}} %>
+</div>
