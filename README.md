@@ -7,6 +7,7 @@
 ## Table of Contents
 
 - [Features](#features)
+- [Screenshot](#screenshot)
 - [Built With](#built-with)
 - [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
@@ -16,6 +17,9 @@
   - [Run tests](#run-tests)
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgements)
+
+## Screenshot
+![User Home page](https://i.imgur.com/uhhByiS.png)
 
 ## Features
 
