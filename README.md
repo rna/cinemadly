@@ -1,13 +1,13 @@
+
 # Cinemadly - A Social networking app for Cinema lovers
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/rnadev?label=Follow%20Ramesh%20on%20Twitter&style=social)](https://twitter.com/rnadev)
-
 > Building Cinemadly, a social networking app where users can follow each other, rate movies, view movies rated by other following users.
+
+![User Home page](https://i.imgur.com/uhhByiS.png)
 
 ## Table of Contents
 
 - [Features](#features)
-- [Screenshot](#screenshot)
 - [Built With](#built-with)
 - [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
@@ -15,11 +15,9 @@
   - [Installation](#installation)
   - [Usage](#usage)
   - [Run tests](#run-tests)
+- [Roadmap](#roadmap)
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgements)
-
-## Screenshot
-![User Home page](https://i.imgur.com/uhhByiS.png)
 
 ## Features
 
@@ -107,6 +105,11 @@ Open `http://localhost:3000/` in your browser.
 ```sh
     rpsec --format documentation
 ```
+## Roadmap
+- [ ] Enhancement of User Interface and design 
+- [ ] Latest feed for trending movies and TV shows
+- [ ] Registration confirmation through email and Password recovery
+- [ ] Integrating Social login
 
 <!-- ### Deployment -->
 
