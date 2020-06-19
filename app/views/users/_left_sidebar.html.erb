@@ -24,7 +24,7 @@
       <%= link_to 'HOME', home_path %> </p>
     <p class="navitem col-12 text-left pl-3 <%= "active" if current_page?(profile_path(current_user))%>">
       <%= link_to 'PROFILE', profile_path(current_user) %> </p>
-
+    <p class="navitem col-12 text-left pl-3 <%= "active" if current_page?(profile_path(current_user))%>">
       <%= link_to 'FEED', feed_path %> </p>
   </div>
 </div>
