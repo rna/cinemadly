@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     @followings = @user.following_users
   end
 
+  def feed
+    @timeline_movies = Movie.all
+    @non_followings = current_user.non_following.ordered_by_most_recent
+  end
+
   private
 
   def timeline_movies
