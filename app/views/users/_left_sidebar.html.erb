@@ -1,0 +1,28 @@
+<div class="left-sidebar container">
+  <div class="profile-pic d-flex justify-content-center align-items-center row">
+    <div class="col-5">
+      <% if current_user.avatar.attached? %>
+        <img src="<%= url_for(current_user.avatar)%>">
+      <% end %>
+    </div>
+    <div class="col-7">
+      <p class="text-uppercase font-weight-bold"><%= current_user.name %></p>
+    </div>
+  </div>
+  <div class="follow-meter row text-center">
+    <div class="col-6 follow-count">
+      <h4><%= current_user.followings.count %></h4>
+      <p>Following</p>
+    </div>
+    <div class="col-6">
+      <h4><%= current_user.followers.count %></h4>
+      <p>Followers</p>
+    </div>
+  </div>
+  <div class="sidenav row">
+    <p class="navitem col-12 text-left pl-3 <%= "active" if current_page?(root_path || home_path)%>">
+      <%= link_to 'HOME', home_path %> </p>
+    <p class="navitem col-12 text-left pl-3 <%= "active" if current_page?(profile_path(current_user))%>">
+      <%= link_to 'PROFILE', profile_path(current_user) %> </p>
+  </div>
+</div>
