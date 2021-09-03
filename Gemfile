@@ -12,6 +12,7 @@ gem 'puma', '~> 4.3'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'sass-rails', '>= 6'
 gem 'sprockets-rails', require: 'sprockets/railtie'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 gem 'cloudinary'
 gem 'dotenv-rails'
